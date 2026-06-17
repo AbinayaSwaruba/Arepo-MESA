@@ -1,0 +1,138 @@
+
+&star_job
+
+   ! this uses one of the prebuilt zams models from mesa/data/star_data
+    change_net=.true.
+    new_net_name="approx21_plus_co56.net"!
+    show_net_species_info=.true.
+    show_net_reactions_info=.true.
+    set_initial_dt = .true.
+    years_for_initial_dt = 0.001
+    load_saved_model=.true.
+    load_model_filename="matched_arepo.mod"
+    set_initial_model_number=.true.
+    initial_model_number = 0
+    set_initial_age=.true.
+    initial_age=0
+    
+    show_log_description_at_start = .false.
+
+    show_net_species_info = .true.
+
+    eosDT_cache_dir = '/afs/mpa/temp/abinaya3/HVs/Model_D6/eosDT_cache'
+    kap_cache_dir = '/afs/mpa/temp/abinaya3/HVs/Model_D6/kap_cache'
+    rates_cache_dir = '/afs/mpa/temp/abinaya3/HVs/Model_D6/rates_cache'
+
+
+    set_initial_cumulative_energy_error = .true.
+    new_cumulative_energy_error = 0d0
+
+    !change_v_flag = .true.
+    !new_v_flag = .true.
+
+    !new_rotation_flag = .true.
+    !change_rotation_flag = .true.
+    !change_initial_rotation_flag = .true.
+    !set_initial_surface_rotation_v = .true.
+    !new_surface_rotation_v = 100d0
+
+    
+
+    relax_initial_entropy = .true.
+    relax_entropy_filename = "remnant_entropy.dat"
+    timescale_for_relax_entropy= 1d-9
+    max_dt_for_relax_entropy = 1d-10
+    max_steps_to_relax_entropy = 10000
+    num_timescales_for_relax_entropy = 100
+    get_entropy_for_relax_from_eos= "" 
+
+
+
+
+
+
+    save_model_when_terminate = .true.
+    save_model_filename = 'relaxed_015381759_equipot.mod'
+    pgstar_flag= .false.
+    disable_pgstar_during_relax_flag= .false.
+    pause_before_terminate = .true.
+/ ! end of star_job namelist
+
+&kap
+  zbase=0.0142
+  !tau_factor=10
+  use_Type2_opacities = .true.
+  kap_file_prefix = 'a09'
+  kap_CO_prefix='a09_co'
+  kap_lowT_prefix='lowT_fa05_a09p'
+
+/ ! end of kap namelist
+
+&eos
+    use_PC = .false.
+    use_Skye = .false.
+    use_OPAL_SCVH = .false.
+    use_FreeEOS=.false.
+    use_CMS = .false.
+    !logRho_max_FreeEOS_hi = 3.5d0
+    !logRho_max_FreeEOS_lo = 3.0d0
+  logT_min_FreeEOS_hi = 3.7d0
+  logT_min_FreeEOS_lo = 3.5d0
+  !logT_max_FreeEOS_hi = 6.5d0 ! FreeEOS tabulations go up to here
+  !logT_max_FreeEOS_lo = 6.2d0
+  logQ_cut_lo_Z_FreeEOS_hi = 3.5
+  logQ_cut_lo_Z_FreeEOS_lo = 3.0
+  logQ_cut_hi_Z_FreeEOS_hi = 3.5
+  logQ_cut_hi_Z_FreeEOS_lo = 3.0
+
+/ ! end of eos namelist
+
+&controls
+    report_ierr=.false.
+    report_solver_progress=.true.
+    ! we do just one step in this inlist, turning off gold for this single step helps
+    use_gold_tolerances = .false.
+    use_gold2_tolerances = .false.
+    convergence_ignore_equL_residuals = .true. 
+
+    max_resid_jump_limit = 1d99
+    mlt_option='none'
+    max_timestep = 1d0
+    max_model_number = 1
+    !max_years_for_timestep=0.1d0
+    !max_age=1
+    !read_extra_controls_inlist(1) = .true.
+    !extra_controls_inlist_name(1)= 'inlist_common'
+    log_directory = 'LOGS'
+    eps_nuc_factor = 0
+    !op_mono_data_path = '/home/musca/aabhat/phd/Software/MESA/OP4STARS_1.3/mono'
+    !op_mono_data_cache_filename = '/home/musca/aabhat/phd/Software/MESA/OP4STARS_1.3/mono/op_mono_cache.bin'
+    !convergence_ignore_equL_residuals=.true.
+    !op_mono_method = 'hu'
+    !low_logT_op_mono_full_off=4.7d0
+    !low_logT_op_mono_full_on=4.9d0
+    !high_logT_op_mono_full_off = 6.5d0 !6.4d0
+    !high_logT_op_mono_full_on = 6.3d0 !6.0d0
+    !scale_max_correction = 0.1d0
+    !Pextra_factor =2.0
+    !set_tau_factor=10
+    !varcontrol_target = 1d-3
+    energy_eqn_option='eps_grav'
+    ignore_too_large_correction = .true.
+    !hot_wind_scheme = 'Dutch'
+    !cool_wind_RGB_scheme = 'Dutch'
+    !cool_wind_AGB_scheme = 'Dutch'
+    !Dutch_wind_lowT_scheme = 'de Jager'
+    !Dutch_scaling_factor = 1.0
+    !max_abar_for_burning=-1
+    mesh_delta_coeff=0.9
+
+
+  !
+
+/ ! end of controls namelist
+
+
+&pgstar
+      
+/ ! end of pgstar namelist

@@ -1,0 +1,305 @@
+DATE: 2026-06-08
+TIME: 16:16:08
+ reading user weak rate file /afs/mpa/temp/abinaya/sw/changed_mesa/data/rates_data/rate_tables/S13_r_be7_wk_li7.h5
+ version_number r23.05.1
+ read inlist_project
+load saved model matched_arepo.mod
+
+ change to "approx21_plus_co56.net"
+ number of species          22
+                                        set_initial_age    0.0000000000000000D+00
+                                                set_age    0.0000000000000000D+00
+                                 set_initial_dt (years)    1.0000000000000000D-03
+                                 max_timestep (seconds)    1.0000000000000000D+00
+                               set_initial_model_number           0
+                             set_initial_number_retries           0
+
+                              relax_initial_composition
+ relax_composition: num_steps_to_use        1000
+                       avg remaining difference, lambda    0.0000000000000000D+00    1.0000000000000000D+00
+
+                                     solver_call_number           1
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+     1  1  coeff 1.0000 avg resid  0.530E-02     max resid dv_dt     1  0.20592E+00 mix type xx000 avg corr  0.218E-01      max corr lnd   343 -0.31234E+00 mix type 00000  avg+max corr+resid
+     1  2  coeff 1.0000 avg resid  0.275E-02     max resid dv_dt     2  0.70765E+00 mix type x0000 avg corr  0.166E-01      max corr lnd     1 -0.26936E+00 mix type xx000  avg+max corr+resid
+                    tol2 residual tolerances: norm, max    9.9999999999999997D+89    9.9999999999999997D+89
+     1  3  coeff 1.0000 avg resid  0.109E-02     max resid dv_dt     2  0.87424E+00 mix type x0000 avg corr  0.466E-02      max corr lnd     1  0.25112E+00 mix type xx000  avg+max corr
+     1  4  coeff 1.0000 avg resid  0.523E-03     max resid dv_dt     4  0.16419E+00 mix type 00000 avg corr  0.123E-02      max corr lnd     3  0.13202E+00 mix type 00000  avg+max corr
+     1  5  coeff 1.0000 avg resid  0.737E-04     max resid dv_dt     7  0.17121E-01 mix type 00000 avg corr  0.613E-03      max corr lnd     2 -0.64019E-01 mix type x0000  avg+max corr
+     1  6  coeff 1.0000 avg resid  0.506E-04     max resid dv_dt     1  0.31011E-01 mix type xx000 avg corr  0.303E-03      max corr lnd     1 -0.45847E-01 mix type xx000  avg+max corr
+     1  7  coeff 1.0000 avg resid  0.909E-03     max resid dv_dt     2  0.45655E+00 mix type x0000 avg corr  0.158E-02      max corr lnd     1  0.28766E+00 mix type xx000  avg+max corr
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D+00    1.0000000000000000D+00
+     1  8  coeff 1.0000 avg resid  0.909E-03     max resid dv_dt     2  0.45655E+00 mix type x0000 avg corr  0.927E-02      max corr lnd     1 -0.79865E+00 mix type xx000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number           1
+                                                     nz         921
+                                         s% num_retries           0
+                                                     dt    1.0000000000000000D+00
+                                          log dt/secyer   -7.4991039670852269D+00
+
+ retry:  adjust_correction failed in eval_equations -- give up in solver       1
+                       avg remaining difference, lambda    0.0000000000000000D+00    1.0000000000000000D+00
+
+                                     solver_call_number           2
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+     1  1  coeff 0.0100 avg resid  0.193E-02     max resid dv_dt     1  0.21003E+00 mix type xx000 avg corr  0.217E-01      max corr lnd   343 -0.31231E+00 mix type 00000  avg+max corr+resid
+     1  2  coeff 0.1000 avg resid  0.172E-02     max resid dv_dt     1  0.18824E+00 mix type xx000 avg corr  0.113E-01      max corr lnd     1 -0.27013E+00 mix type xx000  avg+max corr+resid
+                    tol2 residual tolerances: norm, max    9.9999999999999997D+89    9.9999999999999997D+89
+     1  3  coeff 1.0000 avg resid  0.236E-02     max resid dv_dt     2  0.39955E+00 mix type x0000 avg corr  0.882E-02      max corr lnd     1 -0.21592E+00 mix type xx000  avg+max corr
+     1  4  coeff 1.0000 avg resid  0.364E-02     max resid dv_dt    35  0.26335E+01 mix type 00000 avg corr  0.268E-02      max corr lnd    34 -0.53817E+00 mix type 00000  avg+max corr
+     1  5  coeff 0.4758 avg resid  0.623E-02     max resid dv_dt    35  0.26145E+01 mix type 00000 avg corr  0.493E-02      max corr lnd    33  0.15575E+01 mix type 00000  avg+max corr
+     1  6  coeff 0.0100 avg resid  0.558E-02     max resid dv_dt    36  0.19330E+01 mix type 00000 avg corr  0.257E-01      max corr lnd    34  0.52169E+02 mix type 00000  avg+max corr
+     1  7  coeff 0.0100 avg resid  0.572E-02     max resid dv_dt    36  0.29900E+01 mix type 00000 avg corr  0.345E-01      max corr lnd    35  0.71958E+02 mix type 00000  avg+max corr
+     1  8  coeff 0.0100 avg resid  0.566E-02     max resid dv_dt    36  0.29312E+01 mix type 00000 avg corr  0.254E-01      max corr lnd    36  0.12241E+02 mix type 00000  avg+max corr
+     1  9  coeff 0.1000 avg resid  0.471E-02     max resid dv_dt    33  0.14986E+01 mix type 00000 avg corr  0.295E-02      max corr lnd    36  0.30519E+01 mix type 00000  avg+max corr
+     1 10  coeff 0.1000 avg resid  0.436E-02     max resid dv_dt    33  0.13287E+01 mix type 00000 avg corr  0.204E-02      max corr lnd    37  0.12775E+01 mix type 00000  avg+max corr
+     1 11  coeff 1.0000 avg resid  0.330E-02     max resid dv_dt    37  0.26258E+01 mix type 00000 avg corr  0.139E-02      max corr lnd    36 -0.50037E+00 mix type 00000  avg+max corr
+     1 12  coeff 0.2000 avg resid  0.319E-02     max resid dv_dt    36  0.25076E+01 mix type 00000 avg corr  0.217E-02      max corr lnT    35  0.10681E+01 mix type 00000  avg+max corr
+     1 13  coeff 1.0000 avg resid  0.147E-02     max resid dv_dt    36  0.12683E+01 mix type 00000 avg corr  0.120E-02      max corr lnd    36  0.45562E+00 mix type 00000  avg+max corr
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D+00    1.0000000000000000D+00
+     1 14  coeff 1.0000 avg resid  0.147E-02     max resid dv_dt    36  0.12683E+01 mix type 00000 avg corr  0.187E-02      max corr lnT    36 -0.36556E+00 mix type 00000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number           2
+                                                     nz         921
+                                         s% num_retries           1
+                                                     dt    5.0000000000000000D-01
+                                          log dt/secyer   -7.8001339627492081D+00
+
+ retry: get_eos failed       1
+                       avg remaining difference, lambda    0.0000000000000000D+00    1.0000000000000000D+00
+
+                                     solver_call_number           3
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+     1  1  coeff 0.0100 avg resid  0.193E-02     max resid dv_dt     1  0.21002E+00 mix type xx000 avg corr  0.216E-01      max corr lnd   343 -0.31229E+00 mix type 00000  avg+max corr+resid
+     1  2  coeff 1.0000 avg resid  0.329E-02     max resid dv_dt     2  0.40833E+00 mix type x0000 avg corr  0.110E-01      max corr lnd     1 -0.23470E+00 mix type xx000  avg+max corr+resid
+                    tol2 residual tolerances: norm, max    9.9999999999999997D+89    9.9999999999999997D+89
+     1  3  coeff 0.1000 avg resid  0.302E-02     max resid dv_dt     2  0.41332E+00 mix type x0000 avg corr  0.363E-02      max corr lnd     1  0.56855E+00 mix type xx000  avg+max corr
+     1  4  coeff 0.1000 avg resid  0.272E-02     max resid dv_dt     2  0.37191E+00 mix type x0000 avg corr  0.274E-02      max corr lnd    27 -0.15609E+00 mix type 00000  avg+max corr
+     1  5  coeff 0.1000 avg resid  0.249E-02     max resid dv_dt     2  0.36857E+00 mix type x0000 avg corr  0.257E-02      max corr lnd     1 -0.39964E+00 mix type xx000  avg+max corr
+     1  6  coeff 0.1000 avg resid  0.225E-02     max resid dv_dt     2  0.33377E+00 mix type x0000 avg corr  0.238E-02      max corr lnd     1  0.12060E+00 mix type xx000  avg+max corr
+     1  7  coeff 1.0000 avg resid  0.789E-03     max resid dv_dt     2  0.15081E+00 mix type x0000 avg corr  0.235E-02      max corr lnd     1  0.12213E+00 mix type xx000  avg+max corr
+     1  8  coeff 1.0000 avg resid  0.241E-03     max resid dv_dt     1  0.73433E-01 mix type xx000 avg corr  0.953E-03      max corr lnd    23  0.11016E+00 mix type 00000  avg+max corr
+     1  9  coeff 1.0000 avg resid  0.146E-03     max resid dv_dt     1  0.62971E-01 mix type xx000 avg corr  0.406E-03      max corr lnd     1  0.85208E-01 mix type xx000  avg+max corr
+     1 10  coeff 1.0000 avg resid  0.207E-04     max resid dv_dt    15  0.11393E-01 mix type 00000 avg corr  0.146E-03      max corr lnd    15  0.35429E-01 mix type 00000  avg+max corr
+     1 11  coeff 1.0000 avg resid  0.556E-06     max resid dv_dt     2  0.21246E-03 mix type x0000 avg corr  0.345E-04      max corr lnd     1  0.49445E-02 mix type xx000  avg+max corr
+     1 12  coeff 1.0000 avg resid  0.332E-09     max resid dv_dt     6  0.18395E-06 mix type 00000 avg corr  0.730E-06      max corr lnd     6  0.95353E-04 mix type 00000  okay!
+          1   7.925942   5760.223 -99.000000 -99.000000   0.223383   0.000000   0.000000   0.000000   0.401089   2.295735    921      2
+-8.1012E+00   7.925942  -1.334291 -99.000000  -2.505813 -99.000000   0.223383   0.068559   0.464793   0.598911   1.570012     12
+ 7.9220E-09   4.626963  -2.672131 -99.000000 -99.000000  -5.320532   0.122304   0.442411   0.020159   0.000000  0.000E+00         retry
+
+
+ finished doing relax composition
+
+
+                                  relax_initial_entropy
+ relax_entropy: max_steps_to_use       10000
+
+                                     solver_call_number           4
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D+00    1.0000000000000000D+00
+     1  1  coeff 1.0000 avg resid  0.687E+05   max resid dlnE_dt   607  0.86596E+06 mix type 00000 avg corr  0.516E+05      max corr lnd   421  0.76364E+06 mix type 00000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number           4
+                                                     nz         921
+                                         s% num_retries           0
+                                                     dt    3.1557600000000001D-03
+                                          log dt/secyer   -9.9999999999999982D+00
+
+ retry:  abs(dlogT) > hydro_mtx_max_allowed_abs_dlogT         916       1
+
+                                     solver_call_number           5
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D-02    1.0000000000000000D-02
+     1  1  coeff 0.0100 avg resid  0.343E+05   max resid dlnE_dt   607  0.43298E+06 mix type 00000 avg corr  0.258E+05      max corr lnd   421  0.38182E+06 mix type 00000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number           5
+                                                     nz         921
+                                         s% num_retries           1
+                                                     dt    1.5778800000000000D-03
+                                          log dt/secyer   -1.0301029995663979D+01
+
+ retry:  logT > hydro_mtx_max_allowed_logT         921       1
+
+                                     solver_call_number           6
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D-02    1.0000000000000000D-02
+     1  1  coeff 0.0100 avg resid  0.172E+05   max resid dlnE_dt   607  0.21649E+06 mix type 00000 avg corr  0.129E+05      max corr lnd   421  0.19091E+06 mix type 00000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number           6
+                                                     nz         921
+                                         s% num_retries           2
+                                                     dt    7.8894000000000002D-04
+                                          log dt/secyer   -1.0602059991327961D+01
+
+ retry:  logT > hydro_mtx_max_allowed_logT         914       1
+
+                                     solver_call_number           7
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D-02    1.0000000000000000D-02
+     1  1  coeff 0.0100 avg resid  0.858E+04   max resid dlnE_dt   607  0.10825E+06 mix type 00000 avg corr  0.645E+04      max corr lnd   421  0.95456E+05 mix type 00000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number           7
+                                                     nz         921
+                                         s% num_retries           3
+                                                     dt    3.9447000000000001D-04
+                                          log dt/secyer   -1.0903089986991942D+01
+
+ retry:  logT > hydro_mtx_max_allowed_logT         914       1
+
+                                     solver_call_number           8
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D-02    1.0000000000000000D-02
+     1  1  coeff 0.0100 avg resid  0.429E+04   max resid dlnE_dt   607  0.54123E+05 mix type 00000 avg corr  0.322E+04      max corr lnd   421  0.47728E+05 mix type 00000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number           8
+                                                     nz         921
+                                         s% num_retries           4
+                                                     dt    1.9723500000000000D-04
+                                          log dt/secyer   -1.1204119982655923D+01
+
+ retry:  logT > hydro_mtx_max_allowed_logT         874       1
+
+                                     solver_call_number           9
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D-02    1.0000000000000000D-02
+     1  1  coeff 0.0100 avg resid  0.215E+04   max resid dlnE_dt   607  0.27061E+05 mix type 00000 avg corr  0.161E+04      max corr lnd   421  0.23864E+05 mix type 00000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number           9
+                                                     nz         921
+                                         s% num_retries           5
+                                                     dt    9.8617500000000002D-05
+                                          log dt/secyer   -1.1505149978319904D+01
+
+ retry:  logRho > hydro_mtx_max_allowed_logRho         758       1
+
+                                     solver_call_number          10
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D-02    1.0000000000000000D-02
+     1  1  coeff 0.0100 avg resid  0.107E+04   max resid dlnE_dt   607  0.13531E+05 mix type 00000 avg corr  0.806E+03      max corr lnd   421  0.11932E+05 mix type 00000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number          10
+                                                     nz         921
+                                         s% num_retries           6
+                                                     dt    4.9308750000000001D-05
+                                          log dt/secyer   -1.1806179973983886D+01
+
+ retry:  logT < hydro_mtx_min_allowed_logT           4       1
+
+                                     solver_call_number          11
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D-02    1.0000000000000000D-02
+     1  1  coeff 0.0100 avg resid  0.536E+03   max resid dlnE_dt   607  0.67653E+04 mix type 00000 avg corr  0.403E+03      max corr lnd   421  0.59660E+04 mix type 00000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number          11
+                                                     nz         921
+                                         s% num_retries           7
+                                                     dt    2.4654375000000001D-05
+                                          log dt/secyer   -1.2107209969647867D+01
+
+ retry:  logT < hydro_mtx_min_allowed_logT          22       1
+
+                                     solver_call_number          12
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D-02    1.0000000000000000D-02
+     1  1  coeff 0.0100 avg resid  0.268E+03   max resid dlnE_dt   607  0.33827E+04 mix type 00000 avg corr  0.202E+03      max corr lnd   421  0.29830E+04 mix type 00000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number          12
+                                                     nz         921
+                                         s% num_retries           8
+                                                     dt    1.2327187500000000D-05
+                                          log dt/secyer   -1.2408239965311848D+01
+
+ retry:  logT < hydro_mtx_min_allowed_logT         642       1
+
+                                     solver_call_number          13
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D-02    1.0000000000000000D-02
+     1  1  coeff 0.0100 avg resid  0.134E+03   max resid dlnE_dt   607  0.16913E+04 mix type 00000 avg corr  0.101E+03      max corr lnd   421  0.14915E+04 mix type 00000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number          13
+                                                     nz         921
+                                         s% num_retries           9
+                                                     dt    6.1635937500000001D-06
+                                          log dt/secyer   -1.2709269960975830D+01
+
+ retry: get_eos failed       1
+
+                                     solver_call_number          14
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D-02    1.0000000000000000D-02
+     1  1  coeff 0.0100 avg resid  0.671E+02   max resid dlnE_dt   607  0.84567E+03 mix type 00000 avg corr  0.504E+02      max corr lnd   421  0.74575E+03 mix type 00000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number          14
+                                                     nz         921
+                                         s% num_retries          10
+                                                     dt    3.0817968750000001D-06
+                                          log dt/secyer   -1.3010299956639811D+01
+
+ retry:  adjust_correction failed in eval_equations -- give up in solver       1
+
+                                     solver_call_number          15
+                                  gold tolerances level           0
+                       correction tolerances: norm, max    3.0000000000000001D-05    3.0000000000000001D-03
+                    tol1 residual tolerances: norm, max    1.0000000000000000D-10    1.0000000000000001D-09
+        adjust_correction: eval_equations returned ierr          -1    1.0000000000000000D-02    1.0000000000000000D-02
+     1  1  coeff 0.0100 avg resid  0.335E+02   max resid dlnE_dt   607  0.42283E+03 mix type 00000 avg corr  0.252E+02      max corr lnd   421  0.37287E+03 mix type 00000   adjust_correction failed in eval_equations -- give up
+                            solver rejected trial model
+                                        s% model_number           1
+                                  s% solver_call_number          15
+                                                     nz         921
+                                         s% num_retries          11
+                                                     dt    1.5408984375000000D-06
+                                          log dt/secyer   -1.3311329952303792D+01
+
+ retry:  adjust_correction failed in eval_equations -- give up in solver       1
+                                                     dt    7.7044921875000002D-07
+                                     min_timestep_limit    9.9999999999999995D-07
+ stopping because of problems dt < min_timestep_limit
+ failed in relax entropy
+ do_relax_initial_entropy ierr          -1
+ do_star_job_controls_after ierr          -1
+ do_before_evolve_loop ierr          -1
+ do_before_evolve_loop ierr          -1
+DATE: 2026-06-08
+TIME: 16:16:10
