@@ -36,9 +36,9 @@ This workflow helps bridge the two stages by mapping the output of AREPO simulat
 
 ```text
 .
-├── scripts/        # Python scripts for data processing and plotting
-├── data/           # Example/input data files
-├── figures/        # Example output figures
+├── MESA_files/        # MESA (1D) files for relaxation and evolving the star
+├── Input_files/           # input data files from Arepo (3D)
+├── figures/        # output figures
 ├── README.md
 └── requirements.txt
 ```
