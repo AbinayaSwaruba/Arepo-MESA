@@ -50,7 +50,7 @@ This workflow bridges these two stages by mapping AREPO outputs into MESA-compat
 
 Add an example figure here:
 
-![Example profile](figures/example_profile.png)
+![Example profile](figures/HRD_with_D6-2.png)
 
 ## Author
 
