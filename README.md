@@ -46,9 +46,9 @@ This workflow bridges these two stages by mapping AREPO outputs into MESA-compat
 ├── README.md
 ```
 
-## Example Output
+## Output
 
-Add an example figure here:
+The figure with HR diagram with D6-2 
 
 ![Example profile](figures/HRD_with_D6-2.png)
 
