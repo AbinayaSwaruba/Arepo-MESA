@@ -1,88 +1,62 @@
 # AREPO–MESA Profile Tools
 
-Python tools for processing, visualizing, and converting stellar merger simulation profiles between **AREPO** and **MESA** workflows.
+Tools for processing, visualizing, and converting stellar merger and impact remnant profiles between **AREPO** and **MESA** workflows.
 
 ## Overview
 
-This repository contains scripts used to analyse post-impact stellar remnant profiles from hydrodynamical simulations and prepare them for further stellar evolution calculations.
+This repository contains scripts and workflows for modelling post-impact proto-white-dwarf remnants. The tools convert three-dimensional hydrodynamical simulation outputs from **AREPO** into one-dimensional stellar models that can be relaxed and evolved using **MESA**.
 
-The main goal is to compare and transform radial profiles from AREPO simulations into formats that can be used or compared with MESA stellar models.
+The primary goal is to predict the observable properties of post-impact stellar remnants by combining hydrodynamical simulations with long-term stellar evolution calculations.
 
 ## What this repository does
 
-* Reads AREPO remnant profile data
-* Processes composition profiles as a function of mass coordinate
-* Converts isotope abundances into a MESA-compatible format
-* Compares AREPO and MESA profiles
-* Plots physical quantities such as composition, entropy, density, temperature, and radius
-* Helps prepare relaxation inputs for MESA
+The repository is organised into two main components:
 
-## Scientific context
+### 1. Input_files
 
-Hydrodynamical simulations can capture complex stellar merger or impact events, while stellar evolution codes such as MESA are useful for following the long-term evolution of the remnant.
+This folder contains Python scripts that process AREPO simulation outputs and generate composition and entropy profiles suitable for use in MESA. These files are used to construct and relax one-dimensional stellar models.
 
-This workflow helps bridge the two stages by mapping the output of AREPO simulations into profiles that can be inspected, compared, and used in MESA-based follow-up calculations.
+### 2. MESA_files
 
-## Technologies used
+This folder contains MESA inlists and configuration files used to relax the imported profiles and evolve the remnant to later evolutionary stages.
+
+## Scientific Context
+
+Hydrodynamical simulations can capture the complex physics of stellar impacts and merger events, while stellar evolution codes such as MESA are required to follow the long-term evolution of the resulting remnant.
+
+This workflow bridges these two stages by mapping AREPO outputs into MESA-compatible structures and evolving them to predict observable properties.
+
+## Technologies Used
 
 * Python
 * NumPy
 * Matplotlib
-* Scientific data processing
+* AREPO
+* MESA
+* Scientific data analysis
 * Stellar evolution modelling
-* Hydrodynamical simulation analysis
 
-## Repository structure
+## Repository Structure
 
 ```text
 .
-├── MESA_files/        # MESA (1D) files for relaxation and evolving the star
-├── Input_files/           # input data files from Arepo (3D)
-├── figures/        # output figures
+├── Input_files/      # Process AREPO outputs and generate MESA inputs
+├── MESA_files/       # MESA inlists and evolution files
+├── figures/          # Output figures and visualizations
 ├── README.md
-└── requirements.txt
 ```
 
-## Example output
+## Example Output
 
 Add an example figure here:
 
-```markdown
 ![Example profile](figures/example_profile.png)
-```
-
-## Getting started
-
-Clone the repository:
-
-```bash
-git clone https://github.com/AbinayaSwaruba/Arepo-MESA.git
-cd Arepo-MESA
-```
-
-Install the required Python packages:
-
-```bash
-pip install -r requirements.txt
-```
-
-Run an example script:
-
-```bash
-python scripts/example_plot.py
-```
-
-## Example use cases
-
-* Inspecting post-impact remnant composition profiles
-* Comparing AREPO and MESA radial profiles
-* Preparing MESA relaxation inputs
-* Visualizing stellar structure quantities after hydrodynamical simulations
 
 ## Author
 
 **Abinaya Swaruba Rajamuthukumar**
-Postdoctoral Researcher, Max Planck Institute for Astrophysics
-Computational astrophysics | Scientific computing | Stellar evolution
 
+Postdoctoral Researcher
+Max Planck Institute for Astrophysics
 
+Computational Astrophysics • Scientific Computing • Stellar Evolution
