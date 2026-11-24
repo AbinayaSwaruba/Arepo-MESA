@@ -27,30 +27,13 @@
     set_initial_cumulative_energy_error = .true.
     new_cumulative_energy_error = 0d0
 
-    !change_v_flag = .true.
-    !new_v_flag = .true.
-
-    !new_rotation_flag = .true.
-    !change_rotation_flag = .true.
-    !change_initial_rotation_flag = .true.
-    !set_initial_surface_rotation_v = .true.
-    !new_surface_rotation_v = 100d0
-
     relax_initial_composition = .true.
-    relax_composition_filename = "remnant_composition_relax_uniqueM.dat"!
+    relax_composition_filename = "remnant_composition_MESA22.dat"!
     timescale_for_relax_composition = 1d-2
     num_steps_to_relax_composition = 1000
-    
-    !set_to_this_tau_factor=1
-    !set_tau_factor=.true.
-    !relax_initial_angular_momentum = .false.
-    !relax_angular_momentum_filename = "remnant_jrot_approx21plusco56_0.15651556431408387_equipot.dat"
-    !timescale_for_relax_angular_momentum = 1d-9
-    !max_dt_for_relax_angular_momentum = 1d-10
-    !max_steps_to_relax_angular_momentum = 10000
 
     relax_initial_entropy = .true.
-    relax_entropy_filename = "remnant_entropy.dat"
+    relax_entropy_filename = "remnant_entropy_eosDT.dat"
     timescale_for_relax_entropy= 1d-9
     max_dt_for_relax_entropy = 1d-10
     max_steps_to_relax_entropy = 10000 
@@ -81,8 +64,7 @@
     use_OPAL_SCVH = .false.
     use_FreeEOS=.false.
     use_CMS = .false.
-    !logRho_max_FreeEOS_hi = 3.5d0
-    !logRho_max_FreeEOS_lo = 3.0d0
+    
   logT_min_FreeEOS_hi = 3.7d0
   logT_min_FreeEOS_lo = 3.5d0
   !logT_max_FreeEOS_hi = 6.5d0 ! FreeEOS tabulations go up to here
@@ -97,6 +79,7 @@
 &controls
     report_ierr=.false.
     report_solver_progress=.true.
+    
     ! we do just one step in this inlist, turning off gold for this single step helps
     use_gold_tolerances = .false.
     use_gold2_tolerances = .false.
@@ -106,36 +89,12 @@
     mlt_option='none'
     max_timestep = 1d0
     max_model_number = 1
-    !max_years_for_timestep=0.1d0
-    !max_age=1
-    !read_extra_controls_inlist(1) = .true.
-    !extra_controls_inlist_name(1)= 'inlist_common'
     log_directory = 'LOGS'
     eps_nuc_factor = 0
-    !op_mono_data_path = '/home/musca/aabhat/phd/Software/MESA/OP4STARS_1.3/mono'
-    !op_mono_data_cache_filename = '/home/musca/aabhat/phd/Software/MESA/OP4STARS_1.3/mono/op_mono_cache.bin'
-    !convergence_ignore_equL_residuals=.true.
-    !op_mono_method = 'hu'
-    !low_logT_op_mono_full_off=4.7d0
-    !low_logT_op_mono_full_on=4.9d0
-    !high_logT_op_mono_full_off = 6.5d0 !6.4d0
-    !high_logT_op_mono_full_on = 6.3d0 !6.0d0
-    !scale_max_correction = 0.1d0
-    !Pextra_factor =2.0
-    !set_tau_factor=10
-    !varcontrol_target = 1d-3
     energy_eqn_option='eps_grav'
     ignore_too_large_correction = .true.
-    !hot_wind_scheme = 'Dutch'
-    !cool_wind_RGB_scheme = 'Dutch'
-    !cool_wind_AGB_scheme = 'Dutch'
-    !Dutch_wind_lowT_scheme = 'de Jager'
-    !Dutch_scaling_factor = 1.0
-    !max_abar_for_burning=-1
     mesh_delta_coeff=0.9
 
-
-  !
 
 / ! end of controls namelist
 

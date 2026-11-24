@@ -1,0 +1,310 @@
+
+&star_job
+
+   ! this uses one of the prebuilt zams models from mesa/data/star_data
+    change_net=.true.
+    new_net_name="approx21_plus_co56.net"!
+    show_net_species_info=.true.
+    show_net_reactions_info=.true.
+    set_initial_dt = .true.
+    seconds_for_initial_dt = 1d-4
+    !limit_initial_dt=.true.
+    
+    load_saved_model=.true.
+    load_model_filename="relaxed_015381759_equipot_fin.mod"
+    set_initial_model_number=.true.
+    initial_model_number = 0
+    set_initial_age=.true.
+    initial_age=0
+    
+    show_log_description_at_start = .false.
+
+    show_net_species_info = .true.
+
+
+    eosDT_cache_dir = '/afs/mpa/temp/abinaya3/HVs/Model_D6/eosDT_cache'
+    kap_cache_dir = '/afs/mpa/temp/abinaya3/HVs/Model_D6/kap_cache'
+    rates_cache_dir = '/afs/mpa/temp/abinaya3/HVs/Model_D6/rates_cache'
+
+
+    set_initial_cumulative_energy_error = .true.
+    new_cumulative_energy_error = 0d0
+
+
+    
+    save_model_when_terminate = .true.
+    save_model_filename = 'final.mod'
+
+    pgstar_flag= .true.
+    disable_pgstar_during_relax_flag= .false.
+    pause_before_terminate = .true.
+/ ! end of star_job namelist
+
+&kap
+  Zbase=0.0142
+  use_Type2_opacities=.true.
+
+/ ! end of kap namelist
+
+&eos
+  !include_elec_pos=.false.
+  !use_free_eos=.false.
+  use_simple_Skye_blends=.false.
+  !logT_min_for_any_Skye = 7.0
+  !logT_min_for_all_Skye = 7.5
+  !logrho_min_for_any_Skye =2.7
+  !logrho_min_for_all_Skye =3.0
+  use_PC=.false.
+
+
+  !logRho_max_FreeEOS_hi = 1.5d0
+  !  logRho_max_FreeEOS_lo = 1.3d0
+  logT_min_FreeEOS_hi = 3.7d0
+  logT_min_FreeEOS_lo = 3.5d0
+  !logT_max_FreeEOS_hi = 6.7d0 ! FreeEOS tabulations go up to here
+  !logT_max_FreeEOS_lo = 6.5d0
+  logQ_cut_lo_Z_FreeEOS_hi = 3.5
+  logQ_cut_lo_Z_FreeEOS_lo = 3.0
+
+
+/ ! end of eos namelist
+
+&controls
+    x_integer_ctrl(1) = 2
+    x_ctrl(1)=-1!1d-2
+    report_ierr=.false.
+    report_solver_progress=.false.
+    energy_eqn_option='eps_grav' 
+
+    super_eddington_wind_Ledd_factor = 1
+   
+    hot_wind_scheme = 'Dutch'
+    cool_wind_RGB_scheme = 'Dutch'
+    cool_wind_AGB_scheme = 'Dutch'
+    Dutch_wind_lowT_scheme = 'de Jager' 
+    Dutch_scaling_factor = 1.0
+    !max_abar_for_burning=-1
+
+
+ 
+    !convergence_ignore_equL_residuals=.true.
+    ! we do just one step in this inlist, turning off gold for this single step helps
+    use_gold_tolerances = .false.
+    use_gold2_tolerances = .false.
+    !op_mono_data_path = '/nfs/musca/aabhat/phd/Software/MESA/OP4STARS_1.3/mono'
+    !op_mono_data_cache_filename = '/nfs/musca/aabhat/phd/Software/MESA/OP4STARS_1.3/mono/op_mono_cache_new.bin'
+    !convergence_ignore_equL_residuals=.true.
+    !op_mono_method = 'hu'
+    !low_logT_op_mono_full_off=4.7d0
+    !low_logT_op_mono_full_on=4.9d0
+    !high_logT_op_mono_full_off = 6.5d0 !6.4d0
+    !high_logT_op_mono_full_on = 6.3d0 !6.0d0
+    
+    use_other_energy=.false.
+    max_resid_jump_limit = 1d99
+    !max_timestep = 1d-4
+    !max_model_number = 15000
+    !max_years_for_timestep=1d5
+    max_age=1d8
+    !read_extra_controls_inlist(1) = .true.
+    !extra_controls_inlist_name(1)= 'inlist_common'
+    
+    mesh_delta_coeff=1.0
+    log_directory = 'LOGS'
+    !max_abar_for_burning=-1
+    non_nuc_neu_factor = 1
+ 
+    scale_max_correction = 0.1d0
+
+    varcontrol_target = 1d-3
+
+  ! limit max_model_number as part of test_suite
+
+    use_ledoux_criterion = .false.
+    mixing_length_alpha = 1.5
+    thermohaline_coeff = 1d0
+    set_min_D_mix = .true.
+    min_D_mix = 1d2
+    mass_lower_limit_for_min_D_mix = 0.153d0
+   ! am_nu_ST_factor = 0.0
+   ! D_visc_factor = 0.0
+   ! am_nu_SH_factor = 0.0
+   ! D_ST_factor = 0.0
+   ! D_SH_factor = 0.0
+   ! D_GSF_factor = 1.0
+   ! D_ES_factor = 1.0
+   ! D_SSI_factor = 1.0
+   ! D_DSI_factor = 1.0
+   ! am_D_mix_factor = 0.0333d0
+   ! am_gradmu_factor = 0.1d0
+   ! num_cells_for_smooth_gradL_composition_term = 3
+
+
+
+    eps_mdot_factor = 1.2d0
+    okay_to_reduce_gradT_excess=.true.
+    !surf_avg_tau_min = 0
+    !surf_avg_tau = 10
+    !max_mdot_redo_cnt = 200
+    !min_years_dt_for_redo_mdot = 0
+    !surf_omega_div_omega_crit_limit = 0.99d0
+    !surf_omega_div_omega_crit_tol = 0.06d0
+    rotational_mdot_boost_fac = 1d0
+    rotational_mdot_kh_fac = 1d0
+    mdot_revise_factor = 1.2
+    implicit_mdot_boost = 0.1
+
+
+
+
+    !gradT_excess_lambda1=-1
+    !gradT_excess_beta1=0.15
+    !Pextra_factor = 2
+    history_interval=1
+    profile_interval = 10
+/ ! end of controls namelist
+
+
+&pgstar
+      pgstar_interval = 5
+
+      pgstar_age_disp = 2.5
+      pgstar_model_disp = 2.5
+
+      !### scale for axis labels
+      pgstar_xaxis_label_scale = 1.3
+      pgstar_left_yaxis_label_scale = 1.3
+      pgstar_right_yaxis_label_scale = 1.3
+
+      Grid2_win_flag = .true.
+
+      Grid2_win_width = 15
+      Grid2_win_aspect_ratio = 0.65 ! aspect_ratio = height/width
+
+      Grid2_plot_name(4) = 'Mixing'
+
+      Grid2_num_cols = 7 ! divide plotting region into this many equal width cols
+      Grid2_num_rows = 8 ! divide plotting region into this many equal height rows
+      Grid2_num_plots = 6 ! <= 10
+
+      Grid2_plot_name(1) = 'TRho_Profile'
+      Grid2_plot_row(1) = 1 ! number from 1 at top
+      Grid2_plot_rowspan(1) = 3 ! plot spans this number of rows
+      Grid2_plot_col(1) =  1 ! number from 1 at left
+      Grid2_plot_colspan(1) = 2 ! plot spans this number of columns 
+      Grid2_plot_pad_left(1) = -0.05 ! fraction of full window width for padding on left
+      Grid2_plot_pad_right(1) = 0.01 ! fraction of full window width for padding on right
+      Grid2_plot_pad_top(1) = 0.00 ! fraction of full window height for padding at top
+      Grid2_plot_pad_bot(1) = 0.05 ! fraction of full window height for padding at bottom
+      Grid2_txt_scale_factor(1) = 0.65 ! multiply txt_scale for subplot by this
+
+
+      Grid2_plot_name(5) = 'Kipp'
+      Grid2_plot_row(5) = 4 ! number from 1 at top
+      Grid2_plot_rowspan(5) = 3 ! plot spans this number of rows
+      Grid2_plot_col(5) =  1 ! number from 1 at left
+      Grid2_plot_colspan(5) = 2 ! plot spans this number of columns 
+      Grid2_plot_pad_left(5) = -0.05 ! fraction of full window width for padding on left
+      Grid2_plot_pad_right(5) = 0.01 ! fraction of full window width for padding on right
+      Grid2_plot_pad_top(5) = 0.03 ! fraction of full window height for padding at top
+      Grid2_plot_pad_bot(5) = 0.0 ! fraction of full window height for padding at bottom
+      Grid2_txt_scale_factor(5) = 0.65 ! multiply txt_scale for subplot by this
+      Kipp_title = ''
+      Kipp_show_mass_boundaries = .true.
+      Kipp_xaxis_name = 'star_age'
+
+      Grid2_plot_name(6) = 'HR'
+      HR_title = ''
+      Grid2_plot_row(6) = 7 ! number from 1 at top
+      Grid2_plot_rowspan(6) = 2 ! plot spans this number of rows
+      Grid2_plot_col(6) =  6 ! number from 1 at left
+      Grid2_plot_colspan(6) = 2 ! plot spans this number of columns 
+
+      Grid2_plot_pad_left(6) = 0.05 ! fraction of full window width for padding on left
+      Grid2_plot_pad_right(6) = -0.01 ! fraction of full window width for padding on right
+      Grid2_plot_pad_top(6) = 0.0 ! fraction of full window height for padding at top
+      Grid2_plot_pad_bot(6) = 0.0 ! fraction of full window height for padding at bottom
+      Grid2_txt_scale_factor(6) = 0.65 ! multiply txt_scale for subplot by this
+
+      History_Panels1_title = ''      
+      History_Panels1_num_panels = 3
+
+      History_Panels1_xaxis_name='star_age'
+      History_Panels1_max_width = -1 ! only used if > 0.  causes xmin to move with xmax.
+
+      History_Panels1_yaxis_name(1) = 'period_days' 
+      History_Panels1_other_yaxis_name(1) = ''
+      History_Panels1_yaxis_log(1) = .true.
+      History_Panels1_yaxis_reversed(1) = .false.
+      History_Panels1_ymin(1) = -101d0 ! only used if /= -101d0
+      History_Panels1_ymax(1) = -101d0 ! only used if /= -101d0        
+      !History_Panels1_dymin(1) = 0.1 
+
+      History_Panels1_yaxis_name(2) = 'lg_mtransfer_rate' !
+      History_Panels1_yaxis_reversed(2) = .false.
+      History_Panels1_ymin(2) = -8d0 ! only used if /= -101d0
+      History_Panels1_ymax(2) = -1d0 ! only used if /= -101d0        
+      History_Panels1_dymin(2) = 1 
+
+      History_Panels1_other_yaxis_name(2) = 'log_abs_mdot' 
+      History_Panels1_other_yaxis_reversed(2) = .false.
+      History_Panels1_other_ymin(2) = -8d0 ! only used if /= -101d0
+      History_Panels1_other_ymax(2) = -1d0 ! only used if /= -101d0        
+      History_Panels1_other_dymin(2) = 1 
+
+      History_Panels1_yaxis_name(3) = 'rl_relative_overflow_1'
+      History_Panels1_other_yaxis_name(3) = ''
+      History_Panels1_yaxis_reversed(3) = .false.
+
+      Grid2_plot_name(2) = 'Text_Summary1'
+      Grid2_plot_row(2) = 7 ! number from 1 at top
+      Grid2_plot_rowspan(2) = 2 ! plot spans this number of rows
+      Grid2_plot_col(2) = 1 ! number from 1 at left
+      Grid2_plot_colspan(2) = 4 ! plot spans this number of columns 
+      Grid2_plot_pad_left(2) = -0.08 ! fraction of full window width for padding on left
+      Grid2_plot_pad_right(2) = -0.10 ! fraction of full window width for padding on right
+      Grid2_plot_pad_top(2) = 0.08 ! fraction of full window height for padding at top
+      Grid2_plot_pad_bot(2) = -0.04 ! fraction of full window height for padding at bottom
+      Grid2_txt_scale_factor(2) = 0.19 ! multiply txt_scale for subplot by this
+      Text_Summary1_name(7,1) = 'period_days'
+      Text_Summary1_name(8,1) = 'star_2_mass'
+
+      Grid2_plot_name(3) = 'Profile_Panels3'
+      Profile_Panels3_title = 'Abundance-Power-Mixing'
+      Profile_Panels3_num_panels = 3
+      Profile_Panels3_yaxis_name(1) = 'Abundance'
+      Profile_Panels3_yaxis_name(2) = 'Power'
+      Profile_Panels3_yaxis_name(3) = 'Mixing'
+
+      Profile_Panels3_xaxis_name = 'mass'
+      Profile_Panels3_xaxis_reversed = .false.
+
+      Grid2_plot_row(3) = 1 ! number from 1 at top
+      Grid2_plot_rowspan(3) = 6 ! plot spans this number of rows
+      Grid2_plot_col(3) = 3 ! plot spans this number of columns 
+      Grid2_plot_colspan(3) = 3 ! plot spans this number of columns 
+
+      Grid2_plot_pad_left(3) = 0.09 ! fraction of full window width for padding on left
+      Grid2_plot_pad_right(3) = 0.07 ! fraction of full window width for padding on right
+      Grid2_plot_pad_top(3) = 0.0 ! fraction of full window height for padding at top
+      Grid2_plot_pad_bot(3) = 0.0 ! fraction of full window height for padding at bottom
+      Grid2_txt_scale_factor(3) = 0.65 ! multiply txt_scale for subplot by this
+
+      Grid2_plot_name(4) = 'History_Panels1'
+      Grid2_plot_row(4) = 1 ! number from 1 at top
+      Grid2_plot_rowspan(4) = 6 ! plot spans this number of rows
+      Grid2_plot_col(4) =  6 ! number from 1 at left
+      Grid2_plot_colspan(4) = 2 ! plot spans this number of columns 
+      Grid2_plot_pad_left(4) = 0.05 ! fraction of full window width for padding on left
+      Grid2_plot_pad_right(4) = 0.03 ! fraction of full window width for padding on right
+      Grid2_plot_pad_top(4) = 0.0 ! fraction of full window height for padding at top
+      Grid2_plot_pad_bot(4) = 0.07 ! fraction of full window height for padding at bottom
+      Grid2_txt_scale_factor(4) = 0.65 ! multiply txt_scale for subplot by this
+      
+      Grid2_file_flag = .true.
+      Grid2_file_dir = 'png1'
+      Grid2_file_prefix = 'grid_'
+      Grid2_file_interval = 5 ! 1 ! output when mod(model_number,Grid2_file_interval)==0
+      Grid2_file_width = -1 ! negative means use same value as for window
+      Grid2_file_aspect_ratio = -1 ! negative means use same value as for window 
+/ ! end of pgstar namelist
